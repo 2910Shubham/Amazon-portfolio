@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Custom Amazon</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        /* Add your custom styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #232f3e;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        #search-bar {
+            text-align: center;
+            padding: 20px;
+        }
+
+        #search-bar input {
+            padding: 10px;
+            width: 70%;
+            border: none;
+            border-radius: 3px;
+        }
+
+        #search-bar button {
+            padding: 10px;
+            background-color: #ff9900;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        #location {
+            text-align: center;
+            padding: 10px;
+        }
+
+        #location-icon {
+            color: #ff9900;
+            margin-right: 5px;
+        }
+
+        .swiper-container {
+            width: 100%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* More Menu Styles */
+        #more-menu {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 15px;
+            cursor: pointer;
+            color: #fff;
+            z-index: 2;
+            display: none;
+        }
+
+        #more-menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 1;
+        }
+
+        #more-menu:hover ul {
+            display: block;
+        }
+
+        #more-menu ul li {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        /* Add more styles as needed */
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Amazon Of Shubham</h1>
+        <!-- More Menu -->
+        <div id="more-menu" onclick="toggleMoreMenu()">
+            &#9776;
+            <ul>
+                <li id="about">About</li>
+                <li id="skills">Skills</li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="search-bar">
+        <input type="text" id="search-input" placeholder="Search...anything about shubham">
+        <button onclick="search()">Search</button>
+    </section>
+
+    <section id="location">
+        <span id="location-icon">&#127758;</span>
+        Shubham's Portfolio
+    </section>
+
+    <section class="swiper-container">
+        <div class="swiper-wrapper">
+            <!-- Add your images here -->
+            <div class="swiper-slide">
+                <img src="https://i.ibb.co/9vFqScK/20240122-003851-0000.png" alt="Image 1">
+            </div>
+            <div class="swiper-slide">
+                <img 
+src="https://i.ibb.co/rdYLKn8/20240122-003851-0001.png" alt="Image 2">
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </section>
+
+    <!-- Include Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+
+        function toggleMoreMenu() {
+            var menu = document.getElementById('more-menu').querySelector('ul');
+            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
+
+    <!-- Search Functionality Script -->
+    <script>
+        function search() {
+            var searchTerm = document.getElementById('search-input').value.toLowerCase();
+
+            if (searchTerm.includes("about shubham")) {
+                alert("He is pursuing BCA from Patna University and specializes in graphic design using tools like Canva, Adobe Illustrator, and Picsart. His programming journey started with Python and progressed to C, HTML, CSS, and JavaScript. Currently exploring DSA with Java and considers himself a ChatGPT master. In academics, he completed his Intermediate with Science (PCM) scoring 81.6%, and in 10th scored 80.6%.");
+            } else if (searchTerm.includes("programming skills")) {
+                alert("Programming Skills: Python, C, JavaScript, HTML, CSS. Currently learning Java.");
+            } else if (searchTerm.includes("his work")) {
+                alert("He works on the following subjects:\n- Web Development\n- Graphic Designing\n- Editing\n\nBy the way, he is also a poet. Ask him to say something about you...");
+            }else if (searchTerm.includes("experience")) {
+                alert("Abhi Naya Ladka hai Bhaiya...Experience Mat puchhiye");
+            } else if (searchTerm.includes("about shubham")) {
+                alert("He is pursuing BCA from Patna University and specializes in graphic design using tools like Canva, Adobe Illustrator, and Picsart. His programming journey started with Python and progressed to C, HTML, CSS, and JavaScript. Currently exploring DSA with Java and considers himself a ChatGPT master. In academics, he completed his Intermediate with Science (PCM) scoring 81.6%, and in 10th scored 80.6%.");
+            } else {
+                alert("He is pursuing Bachelor Of Computer Applications From Patna University. To know more about Shubham, search for 'About Shubham'.");
+            }
+        }
+    </script>
+<!-- CV Image -->
+<div id="cv-content" style="display:none;">
+    <img src="https://i.ibb.co/w7qNBSW/Work-20240105-213700-0000.png" alt="Shubham's CV" style="width: 75%; height: auto;">
+</div>
+<!-- Contact Section -->
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:2910viwan@gmail.com">2910viwan@gmail.com</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/viwan2910?igsh=ZGNjOWZkYTE3MQ==" target="_blank">@viwan2910</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/shubham-kumar-mishra-184121236?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Shubham Kumar Mishra</a></p>
+</section>
+
+
+<!-- "Order C.V" Button -->
+<button onclick="orderCV()">Order C.V</button>
+
+
+
+<!-- Footer Section -->
+<footer>
+    
+    <p>&copy; 2024 Shubham Kumar Mishra. All rights reserved.</p>
+</footer>
+
+<!-- Script for "Order C.V" Button -->
+<script>
+    function orderCV() {
+        var cvContent = document.getElementById('cv-content');
+        cvContent.style.display = (cvContent.style.display === 'none') ? 'block' : 'none';
+    }
+</script>
+
+</body>
+
+</html>
